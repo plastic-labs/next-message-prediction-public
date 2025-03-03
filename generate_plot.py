@@ -8,7 +8,9 @@ results_folders = [
     'output/FINAL-grid_experiment_20250227_234520',
     'output/FINAL-grid_experiment_20250228_000836',
     'output/FINAL-grid_experiment_20250228_114923',
-    'output/grid_experiment_20250228_114847'
+    'output/FINAL-grid_experiment_20250228_114847',
+    'output/FINAL-grid_experiment_20250303_123204',
+    'output/FINAL-grid_experiment_20250303_123131'
 ]
                    
 results_files = []
@@ -61,7 +63,7 @@ grouped_stats['stderr'] = grouped_stats['std'] / np.sqrt(grouped_stats['count'])
 
 # Define model families for grouping
 model_families = {
-    'Claude': ['claude-3-7-sonnet-20250219', 'claude-3-5-sonnet-20241022', 'claude-3-5-haiku-latest'],
+    'Claude': ['claude-3-7-sonnet-20250219', 'claude-3-7-sonnet-20250219-thinking', 'claude-3-5-sonnet-20241022', 'claude-3-5-haiku-latest'],
     'OpenAI': ['gpt-4.5-preview-2025-02-27', 'o1', 'o3-mini', 'gpt-4o', 'gpt-4o-mini'],
     'Google': ['gemini-2.0-flash'],
     'Llama': ['meta-llama/llama-3.3-70b-instruct'],
@@ -80,7 +82,8 @@ grouped_stats['model_family'] = grouped_stats['model'].apply(get_model_family)
 
 # Shortened model names for display
 model_display_names = {
-    'claude-3-7-sonnet-20250219': 'Claude 3.7',
+    'claude-3-7-sonnet-20250219-thinking': 'Claude 3.7 Sonnet (Thinking)',
+    'claude-3-7-sonnet-20250219': 'Claude 3.7 Sonnet',
     'claude-3-5-sonnet-20241022': 'Claude 3.5 Sonnet',
     'claude-3-5-haiku-latest': 'Claude 3.5 Haiku',
     'gpt-4o': 'GPT-4o',
