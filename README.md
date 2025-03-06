@@ -6,6 +6,17 @@ This repository contains code for evaluating language models on the task of pred
 
 The benchmark tests a model's ability to identify the genuine next message in a conversation from among three decoys. It's designed to assess social cognition abilities with a verifiable reward signal.
 
+## Data Collection
+
+We pulled discord data using the [Discord Chat Exporter](https://github.com/Tyrrrz/DiscordChatExporter?tab=readme-ov-file) tool. Using the CLI is pretty straightforward--here are the [docs](https://github.com/Tyrrrz/DiscordChatExporter/blob/master/.docs/Using-the-CLI.md) so you can customize to your needs. We used the following command to export the data:
+
+```bash
+./DiscordChatExporter.Cli exportguild --guild <guild-id> -t <token> -f "Csv"
+```
+
+This outputs all the channels in the guild as csv files in a zip file in the current directory.
+
+
 ## Key Components
 
 - `generate_dataset.py`: Processes Discord conversations to extract suitable testing samples and generates decoys.
